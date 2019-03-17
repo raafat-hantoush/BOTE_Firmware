@@ -198,23 +198,27 @@ ret_code_t nrf_sdh_enable_request(void)
 
     // Notify observers about starting SoftDevice enable process.
     sdh_state_observer_notify(NRF_SDH_EVT_STATE_ENABLE_PREPARE);
-
     nrf_clock_lf_cfg_t const clock_lf_cfg =
-    //BOTE SKY66112
-    //#ifdef APP_PA_LAN
-    {.source        = NRF_CLOCK_LF_SRC_SYNTH,            
-                                 .rc_ctiv       = 0,                                
-                                 .rc_temp_ctiv  = 0,                                
-                                 .accuracy = NRF_SDH_CLOCK_LF_XTAL_ACCURACY_PA};
-//    #else
-//    {
-//        .source       = NRF_SDH_CLOCK_LF_SRC,
-//        .rc_ctiv      = NRF_SDH_CLOCK_LF_RC_CTIV,
-//        .rc_temp_ctiv = NRF_SDH_CLOCK_LF_RC_TEMP_CTIV,
-//        .accuracy     = NRF_SDH_CLOCK_LF_ACCURACY
-//    };
-//    #endif
-
+    {
+			
+        .source       = NRF_SDH_CLOCK_LF_SRC,
+        .rc_ctiv      = NRF_SDH_CLOCK_LF_RC_CTIV,
+        .rc_temp_ctiv = NRF_SDH_CLOCK_LF_RC_TEMP_CTIV,
+        .accuracy     = NRF_SDH_CLOCK_LF_ACCURACY
+	
+		/*
+        .source       = NRF_CLOCK_LF_SRC_XTAL,
+        .rc_ctiv      = 0,
+        .rc_temp_ctiv = 0,
+        .accuracy     = NRF_CLOCK_LF_ACCURACY_250_PPM
+*/
+     /*
+        .source       = 0,
+        .rc_ctiv      = 16,
+        .rc_temp_ctiv = 2,
+        .accuracy     = 7        
+	*/
+    };
     CRITICAL_REGION_ENTER();
 #ifdef ANT_LICENSE_KEY
     ret_code = sd_softdevice_enable(&clock_lf_cfg, app_error_fault_handler, ANT_LICENSE_KEY);

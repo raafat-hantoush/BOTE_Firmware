@@ -113,8 +113,6 @@ uint32_t app_fifo_get(app_fifo_t * p_fifo, uint8_t * p_byte)
 {
     if (FIFO_LENGTH() != 0)
     {
-        //bote
-        printf("%i",FIFO_LENGTH());
         fifo_get(p_fifo, p_byte);
         return NRF_SUCCESS;
     }

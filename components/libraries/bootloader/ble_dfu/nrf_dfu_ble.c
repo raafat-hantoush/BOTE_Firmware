@@ -1137,7 +1137,64 @@ uint32_t ble_dfu_init(ble_dfu_t * p_dfu)
     return NRF_SUCCESS;
 }
 
+#define APP_PA_LAN	
 
+#ifdef APP_PA_LAN
+#include "boards.h"
+#define APP_PA_PIN              	17
+#define APP_LNA_PIN              	19
+#define APP_CHL_PIN								22
+
+#define APP_CPS_PIN							6
+
+#define APP_AMP_PPI_CH_ID_SET   0
+#define APP_AMP_PPI_CH_ID_CLR   1
+#define APP_AMP_GPIOTE_CH_ID    0
+
+static void pa_lna_setup(void)
+{
+    uint32_t err_code;
+    nrf_gpio_cfg_output(APP_CPS_PIN);
+		nrf_gpio_cfg_output(APP_CHL_PIN);
+		nrf_gpio_pin_set(APP_CHL_PIN);
+		nrf_gpio_pin_clear(APP_CPS_PIN); //enable
+		//nrf_gpio_pin_set(APP_CPS_PIN); //bypass
+	  nrf_gpio_cfg_output(APP_PA_PIN);
+		nrf_gpio_pin_clear(APP_PA_PIN); //
+	  nrf_gpio_cfg_output(APP_LNA_PIN);
+		nrf_gpio_pin_clear(APP_LNA_PIN); //
+
+
+    static ble_opt_t pa_lna_opts = {
+        .common_opt = {
+            .pa_lna = {
+							
+                .pa_cfg = {
+                    .enable = 1,
+                    .active_high = 1,
+                    .gpio_pin = APP_PA_PIN
+                },
+							
+								
+                .lna_cfg = {
+                    .enable = 1,
+                    .active_high = 1,
+                    .gpio_pin = APP_LNA_PIN
+                },
+								
+                .ppi_ch_id_set = APP_AMP_PPI_CH_ID_SET,
+                .ppi_ch_id_clr = APP_AMP_PPI_CH_ID_CLR,
+                .gpiote_ch_id = APP_AMP_GPIOTE_CH_ID
+            }
+        }
+    };
+		
+    NRF_GPIO->DIRSET |= (1 << APP_PA_PIN) | (1 << APP_LNA_PIN) ;
+    err_code = sd_ble_opt_set(BLE_COMMON_OPT_PA_LNA, &pa_lna_opts);
+    APP_ERROR_CHECK(err_code);
+
+}
+#endif
 static uint32_t ble_dfu_transport_init(nrf_dfu_observer_t observer)
 {
     uint32_t err_code = NRF_SUCCESS;
@@ -1192,7 +1249,9 @@ static uint32_t ble_dfu_transport_init(nrf_dfu_observer_t observer)
     /* Initialize the Device Firmware Update Service. */
     err_code = ble_dfu_init(&m_dfu);
     VERIFY_SUCCESS(err_code);
-
+#ifdef APP_PA_LAN	
+		pa_lna_setup();
+#endif	
     err_code = advertising_start();
     VERIFY_SUCCESS(err_code);
 

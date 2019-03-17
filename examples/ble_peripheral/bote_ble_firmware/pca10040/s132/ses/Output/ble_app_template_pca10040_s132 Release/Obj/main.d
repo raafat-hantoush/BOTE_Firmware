@@ -1,5 +1,5 @@
 Output/ble_app_template_pca10040_s132\ Release/Obj/main.o: \
- C:\nRF5_SDK_15.2.0_9412b96\examples\ble_peripheral\ble_app_template\ -\ orig\main.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\bote_ble_firmware\main.c \
  C:/SEGGER_EmbS/include/stdbool.h C:/SEGGER_EmbS/include/stdint.h \
  C:/SEGGER_EmbS/include/stdio.h C:/SEGGER_EmbS/include/__crossworks.h \
  C:/SEGGER_EmbS/include/stdlib.h C:/SEGGER_EmbS/include/string.h \
@@ -111,4 +111,4 @@ Output/ble_app_template_pca10040_s132\ Release/Obj/main.o: \
  ../../../../../../components/libraries/memobj/nrf_memobj.h \
  ../../../../../../components/libraries/balloc/nrf_balloc.h \
  ../../../../../../components/libraries/log/nrf_log_default_backends.h \
- C:\nRF5_SDK_15.2.0_9412b96\examples\ble_peripheral\ble_app_template\ -\ orig\midi_service.h
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\bote_ble_firmware\midi_service.h

@@ -1,6 +1,6 @@
 Output/ble_app_template_pca10040_s132\ Release/Obj/midi_service.o: \
- C:\nRF5_SDK_15.2.0_9412b96\examples\ble_peripheral\ble_app_template\ -\ orig\midi_service.c \
- C:\nRF5_SDK_15.2.0_9412b96\examples\ble_peripheral\ble_app_template\ -\ orig\midi_service.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\bote_ble_firmware\midi_service.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\bote_ble_firmware\midi_service.h \
  C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/stdbool.h \
  ../../../../../../components/softdevice/s132/headers/ble.h \
  ../../../../../../components/softdevice/s132/headers/nrf_svc.h \

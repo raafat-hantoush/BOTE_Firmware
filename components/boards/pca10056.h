@@ -40,6 +40,8 @@
 #ifndef PCA10056_H
 #define PCA10056_H
 
+//#define FANSTEL_EVB
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -49,12 +51,22 @@ extern "C" {
 // LEDs definitions for PCA10056
 #define LEDS_NUMBER    4
 
+#ifndef FANSTEL_EVB
 #define LED_1          NRF_GPIO_PIN_MAP(0,13)
 #define LED_2          NRF_GPIO_PIN_MAP(0,14)
 #define LED_3          NRF_GPIO_PIN_MAP(0,15)
 #define LED_4          NRF_GPIO_PIN_MAP(0,16)
-#define LED_START      LED_1
-#define LED_STOP       LED_4
+
+#else
+
+#define LED_1          NRF_GPIO_PIN_MAP(0,17)
+#define LED_2          NRF_GPIO_PIN_MAP(1,0)
+#define LED_3          NRF_GPIO_PIN_MAP(0,19)
+#define LED_4          NRF_GPIO_PIN_MAP(0,13)
+#endif
+	
+#define LED_START      LED_4
+#define LED_STOP       LED_2
 
 #define LEDS_ACTIVE_STATE 0
 
@@ -62,17 +74,34 @@ extern "C" {
 
 #define LEDS_INV_MASK  LEDS_MASK
 
+#ifndef FANSTEL_EVB
 #define BSP_LED_0      13
 #define BSP_LED_1      14
 #define BSP_LED_2      15
 #define BSP_LED_3      16
 
+#else
+
+#define BSP_LED_0      17
+#define BSP_LED_1      NRF_GPIO_PIN_MAP(1,0)
+#define BSP_LED_2      19
+#define BSP_LED_3      13
+#endif
+
 #define BUTTONS_NUMBER 4
 
+#ifndef FANSTEL_EVB
 #define BUTTON_1       11
 #define BUTTON_2       12
 #define BUTTON_3       24
 #define BUTTON_4       25
+#else
+
+#define BUTTON_1       11
+#define BUTTON_2       14
+#define BUTTON_3       15
+#define BUTTON_4       16
+#endif
 #define BUTTON_PULL    NRF_GPIO_PIN_PULLUP
 
 #define BUTTONS_ACTIVE_STATE 0
@@ -84,10 +113,18 @@ extern "C" {
 #define BSP_BUTTON_2   BUTTON_3
 #define BSP_BUTTON_3   BUTTON_4
 
+
+#ifndef FANSTEL_EVB
 #define RX_PIN_NUMBER  8
 #define TX_PIN_NUMBER  6
 #define CTS_PIN_NUMBER 7
 #define RTS_PIN_NUMBER 5
+#else
+#define RX_PIN_NUMBER  NRF_GPIO_PIN_MAP(1, 1)
+#define TX_PIN_NUMBER  NRF_GPIO_PIN_MAP(1, 2)
+#define CTS_PIN_NUMBER 7
+#define RTS_PIN_NUMBER 5
+#endif
 #define HWFC           true
 
 #define BSP_QSPI_SCK_PIN   19

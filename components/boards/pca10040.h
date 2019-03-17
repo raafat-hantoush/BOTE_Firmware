@@ -40,6 +40,8 @@
 #ifndef PCA10040_H
 #define PCA10040_H
 
+#define FANSTEL_EVB
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -48,14 +50,21 @@ extern "C" {
 
 // LEDs definitions for PCA10040
 #define LEDS_NUMBER    4
-
+#ifndef FANSTEL_EVB
 #define LED_START      17
 #define LED_1          17
 #define LED_2          18
 #define LED_3          19
 #define LED_4          20
 #define LED_STOP       20
-
+#else
+#define LED_START      17
+#define LED_1          17
+#define LED_2          18
+#define LED_3          19
+#define LED_4          20
+#define LED_STOP       20
+#endif
 #define LEDS_ACTIVE_STATE 0
 
 #define LEDS_INV_MASK  LEDS_MASK
@@ -68,13 +77,21 @@ extern "C" {
 #define BSP_LED_3      LED_4
 
 #define BUTTONS_NUMBER 4
-
+#ifndef FANSTEL_EVB
 #define BUTTON_START   13
 #define BUTTON_1       13
 #define BUTTON_2       14
 #define BUTTON_3       15
 #define BUTTON_4       16
 #define BUTTON_STOP    16
+#else
+#define BUTTON_START   13
+#define BUTTON_1       13
+#define BUTTON_2       14
+#define BUTTON_3       15
+#define BUTTON_4       16
+#define BUTTON_STOP    16
+#endif
 #define BUTTON_PULL    NRF_GPIO_PIN_PULLUP
 
 #define BUTTONS_ACTIVE_STATE 0
@@ -86,10 +103,17 @@ extern "C" {
 #define BSP_BUTTON_2   BUTTON_3
 #define BSP_BUTTON_3   BUTTON_4
 
+#ifndef FANSTEL_EVB
 #define RX_PIN_NUMBER  8
 #define TX_PIN_NUMBER  6
 #define CTS_PIN_NUMBER 7
 #define RTS_PIN_NUMBER 5
+#else
+#define RX_PIN_NUMBER  11
+#define TX_PIN_NUMBER  12
+#define CTS_PIN_NUMBER 7
+#define RTS_PIN_NUMBER 5
+#endif
 #define HWFC           true
 
 #define SPIS_MISO_PIN   28  // SPI MISO signal.

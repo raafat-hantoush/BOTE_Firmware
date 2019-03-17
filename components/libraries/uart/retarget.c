@@ -87,7 +87,7 @@ int fputc(int ch, FILE * p_file)
 
 #elif defined(__GNUC__) && defined(__SES_ARM)
 
-/*int __getchar(FILE * p_file)
+int __getchar(FILE * p_file)
 {
     uint8_t input;
     while (app_uart_get(&input) == NRF_ERROR_NOT_FOUND)
@@ -95,16 +95,16 @@ int fputc(int ch, FILE * p_file)
         // No implementation needed.
     }
     return input;
-}*/
+}
 
 #if defined(__SES_VERSION) && (__SES_VERSION >= 34000)
-/*int __putchar(int ch, __printf_tag_ptr tag_ptr)
+int __putchar(int ch, __printf_tag_ptr tag_ptr)
 {
     UNUSED_PARAMETER(tag_ptr);
 
     UNUSED_VARIABLE(app_uart_put((uint8_t)ch));
     return ch;
-}*/
+}
 #else
 int __putchar(int ch, FILE * p_file)
 {
