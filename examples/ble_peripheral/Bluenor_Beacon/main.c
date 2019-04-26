@@ -88,10 +88,10 @@
 
 #define APP_BLE_OBSERVER_PRIO           3                                           /**< Application's BLE observer priority. You shouldn't need to modify this value. */
 
-#define APP_ADV_INTERVAL                3200  //BOTE 2 seconds  old 64                                        /**< The advertising interval (in units of 0.625 ms. This value corresponds to 40 ms). */
+#define APP_ADV_INTERVAL                1120  //BOTE 700 mili seconds  old 64                                        /**< The advertising interval (in units of 0.625 ms. This value corresponds to 40 ms). */
 //#define APP_ADV_INTERVAL                1600 
 
-#define APP_ADV_DURATION               420 //BOTE 4.2 seconds OLD 18000                                       /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
+#define APP_ADV_DURATION               100 //BOTE 1 seconds OLD 18000                                       /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
 
 #define MIN_CONN_INTERVAL               MSEC_TO_UNITS(20, UNIT_1_25_MS)             /**< Minimum acceptable connection interval (20 ms), Connection interval uses 1.25 ms units. */
 #define MAX_CONN_INTERVAL               MSEC_TO_UNITS(75, UNIT_1_25_MS)             /**< Maximum acceptable connection interval (75 ms), Connection interval uses 1.25 ms units. */
