@@ -76,7 +76,7 @@ int16_t GetBatteryVoltage1(void)
 		{		
 			result = (((buffer[0] * 1000L)+(ADC12_COUNTS_PER_VOLT/2)) / ADC12_COUNTS_PER_VOLT);
 			
-			SEGGER_RTT_printf(0, "battery_voltage: %d\n", result*5);
+			SEGGER_RTT_printf(0, "battery_voltage: %d\n", (result*4583)/100);
 			
 		}    
 		return result;

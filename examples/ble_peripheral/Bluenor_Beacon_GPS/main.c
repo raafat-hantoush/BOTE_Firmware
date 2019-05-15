@@ -22,6 +22,8 @@
 #include "gps.h"
 #include "SEGGER_RTT.h"
 #include "ADC.h"
+#include "I2C.h"
+#include "bmi160.h"
 #define GPS_UART_RX 4
 //#if defined (UART_PRESENT)
 //#include "nrf_uart.h"
@@ -164,7 +166,7 @@ static test_params_t m_test_params =
 		#ifdef BT840
 			#define DEVICE_NAME                     "BlueNor 52840X"  
 		#else
-			#define DEVICE_NAME                     "BOTE GPS_3"//"BlueNor 52832X"                               /**< Name of device. Will be included in the advertising data. */
+			#define DEVICE_NAME                     "BOTE GPS_BMX"//"BlueNor 52832X"                               /**< Name of device. Will be included in the advertising data. */
 		#endif
 	#endif
 #else
@@ -985,28 +987,41 @@ static uint8_t cnt =0x30;
 //#endif
 static void heart_rate_meas_timeout_handler(void * p_context)
 {
+///enable GPS module
+ if (nrf_gpio_pin_read(7) == 0)
+    {
+      //GPS on 
+      nrf_gpio_pin_clear(11);
+      nrf_delay_ms(10);
+      nrf_gpio_pin_set(11);
+      nrf_delay_ms(50);
+      nrf_gpio_pin_clear(11);
+      //
+    }
+    
 //SEGGER_RTT_printf(0,"\r\nTimer handler\r\n");
-    get_gps_local(&packet[1]);
+    get_gps_local(&packet[3]);
     SEGGER_RTT_printf(0,"Wakeup pin status %d\n",nrf_gpio_pin_read(7));
     SEGGER_RTT_printf(0,"Charging status %d\n",nrf_gpio_pin_read(23));
     int16_t VBAT = GetBatteryVoltage1();
+    if (readByte(0x69,0x00) == 0xD8)
+    {
+      SEGGER_RTT_printf(0,"BMX160 detected\n");
 
-#ifdef BT840	
-	if(is_connect){
-		//nrf_gpio_pin_clear(13);
-	}else{
-		//nrf_gpio_pin_set(13);
-	}
-#else
-		if(is_connect){
+    }
+    int step1 = readByte(0x69,0x21);
+    int step2 = readByte(0x69,0x20);
+    SEGGER_RTT_printf(0,"Stepcounter %d, %d \n", step1,step2);
+ 		if(is_connect){
                 SEGGER_RTT_printf(0,"Connected Timer handler\n");
-                
-                
                 cnt++;
                 if(cnt > 0x39)
 		cnt = 0x30;
                 gps_test[63] = cnt;
                 packet[55] = VBAT*5;
+                packet[0] = step1;
+                packet[1] = step2;
+                
                 packet[63] = cnt;
                 uint16_t length = 64;
                 //ble_nus_data_send(&m_nus, gps_test, &length,m_conn_handle);
@@ -1016,8 +1031,7 @@ static void heart_rate_meas_timeout_handler(void * p_context)
         SEGGER_RTT_printf(0,"DisConnected Timer handler\n");
 //		nrf_gpio_pin_toggle(14);
 	}
-#endif
-	
+
 #ifdef KEEP_SEND	
 	if(is_connect){
 			uint8_t send_str[6];
@@ -1143,7 +1157,7 @@ static void advertising_start(void)
 	#ifdef BT840
 		ret_code_t err_code = sd_ble_gap_tx_power_set(BLE_GAP_TX_POWER_ROLE_ADV,m_advertising.adv_handle,+4);
 	#else
-		ret_code_t err_code = sd_ble_gap_tx_power_set(BLE_GAP_TX_POWER_ROLE_ADV,m_advertising.adv_handle,+4);
+		ret_code_t err_code = sd_ble_gap_tx_power_set(BLE_GAP_TX_POWER_ROLE_ADV,m_advertising.adv_handle,0);
 	#endif	
     APP_ERROR_CHECK(err_code);
 
@@ -1151,92 +1165,47 @@ static void advertising_start(void)
     APP_ERROR_CHECK(err_code);
 }
 
-
-
 /**@brief Application main function.
  */
 int main(void)
 {
     bool erase_bonds;
-    //leds
-    nrf_gpio_cfg_output(18);	
-    nrf_gpio_cfg_output(13);	
-    nrf_gpio_cfg_output(20);	
-    nrf_gpio_pin_set(13);
-    nrf_gpio_pin_set(18);
-    nrf_gpio_pin_set(20);
     //gps_on_pin
-    nrf_gpio_cfg_output(11);	
+    nrf_gpio_cfg_output(11);
+//    nrf_gpio_cfg_output(13);
+//     nrf_gpio_cfg_output(18);
+//      nrf_gpio_cfg_output(20);
+//    nrf_gpio_pin_set(13);
+//    nrf_gpio_pin_clear(13);
+//    nrf_gpio_pin_set(20);
+//    nrf_gpio_pin_set(18);
     //GPS_wakeup read pin
     nrf_gpio_cfg_input(7,NRF_GPIO_PIN_PULLUP);	
-    nrf_gpio_cfg_input(23,NRF_GPIO_PIN_PULLUP);	
-    
-    //GPS on 
-    nrf_gpio_pin_clear(11);
-    nrf_delay_us(100);
-    nrf_gpio_pin_set(11);
-    nrf_delay_us(100);
-    nrf_gpio_pin_clear(11);
-    //
-    //nrf_gpio_pin_clear(18);
-    // Initialize.
-//    uart_init();
+    if (nrf_gpio_pin_read(7) == 0)
+    {
+      //GPS on 
+      nrf_gpio_pin_clear(11);
+      nrf_delay_ms(10);
+      nrf_gpio_pin_set(11);
+      nrf_delay_ms(50);
+      nrf_gpio_pin_clear(11);
+      //
+    }
+    I2C_init();
+    writeByte(0x69, 0x7A, 0x15);
+    writeByte(0x69, 0x7B, 0x0B);
+    SEGGER_RTT_printf(0,"Stepcounter settings %d \n", (readByte(0x69,0x7B)));
+    writeByte(0x69, 0x52, 0x08);
+    SEGGER_RTT_printf(0,"Step counter activation\n");
     uart_init(GPS_UART_RX);
-//    log_init();
     timers_init();
-    /// BOTE not needed 
-    //buttons_leds_init(&erase_bonds);
     power_management_init();
     ble_stack_init();
     gap_params_init();
     gatt_init();
     services_init();
-	
-#ifdef CODED_PHY	
-		m_adv_scan_phy_selected = SELECTION_CODED_PHY;
-		phy_types = 3;
-		if(phy_types == 2){
-			m_test_params.phys.tx_phys = BLE_GAP_PHY_2MBPS;
-			m_test_params.phys.rx_phys = BLE_GAP_PHY_2MBPS;
-		}else if(phy_types == 3){
-			m_test_params.phys.tx_phys = BLE_GAP_PHY_CODED;
-			m_test_params.phys.rx_phys = BLE_GAP_PHY_CODED;			
-		}else{
-			m_test_params.phys.tx_phys = BLE_GAP_PHY_1MBPS;
-			m_test_params.phys.rx_phys = BLE_GAP_PHY_1MBPS;					
-		}
-    ble_gap_phys_t phys = {0};
-    phys.tx_phys = m_test_params.phys.tx_phys;
-    phys.rx_phys = m_test_params.phys.rx_phys ;	
-		preferred_phy_set(&phys);								
-#else
-		m_adv_scan_phy_selected = SELECTION_1M_PHY;
-		//phy_types = 1;
-#endif	
-/*		
-		nrf_gpio_cfg_input(11,BUTTON_PULL);
-		nrf_gpio_cfg_output(19);
-		nrf_delay_ms(50);
-		if(nrf_gpio_pin_read(11) == 0){
-			m_adv_scan_phy_selected = SELECTION_CODED_PHY;
-			m_test_params.phys.tx_phys = BLE_GAP_PHY_CODED;
-			m_test_params.phys.rx_phys = BLE_GAP_PHY_CODED;			
-
-			ble_gap_phys_t phys = {0};
-			phys.tx_phys = m_test_params.phys.tx_phys;
-			phys.rx_phys = m_test_params.phys.rx_phys ;	
-			preferred_phy_set(&phys);
-			nrf_gpio_pin_clear(13);
-			nrf_gpio_pin_set(19);
-		}else{
-			m_adv_scan_phy_selected = SELECTION_1M_PHY;
-			phy_types = 1;	
-			nrf_gpio_pin_set(13);
-			nrf_gpio_pin_clear(19);
-		}
-	*/	
-    //advertising_init();
-                advertising_data_set();
+    m_adv_scan_phy_selected = SELECTION_1M_PHY;
+    advertising_data_set();
     conn_params_init();
 #ifdef APP_PA_LAN	
 		pa_lna_setup();

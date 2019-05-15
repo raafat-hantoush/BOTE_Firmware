@@ -1,6 +1,6 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/boards.o: \
- /home/lenz/Documents/BOTE_Firmware/components/boards/boards.c \
- /home/lenz/Documents/BOTE_Firmware/components/boards/boards.h \
+ /home/lenz/Documents/840-coded\ examples/BOTE_Firmware/components/boards/boards.c \
+ /home/lenz/Documents/840-coded\ examples/BOTE_Firmware/components/boards/boards.h \
  ../../../../../../modules/nrfx/hal/nrf_gpio.h \
  ../../../../../../modules/nrfx/nrfx.h \
  ../../../../../../integration/nrfx/nrfx_config.h ../config/sdk_config.h \
@@ -49,4 +49,4 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/boards.o: \
  ../../../../../../components/libraries/util/sdk_resources.h \
  ../../../../../../components/softdevice/s132/headers/nrf_sd_def.h \
  ../../../../../../modules/nrfx/drivers/nrfx_errors.h \
- /home/lenz/Documents/BOTE_Firmware/components/boards/pca10040.h
+ /home/lenz/Documents/840-coded\ examples/BOTE_Firmware/components/boards/pca10040.h
