@@ -1,8 +1,7 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/ble_conn_state.o: \
- /home/lenz/Documents/BOTE_Firmware/components/ble/common/ble_conn_state.c \
- /home/lenz/Documents/BOTE_Firmware/components/ble/common/ble_conn_state.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\ble\common\ble_conn_state.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\ble\common\ble_conn_state.h \
+ C:/SEGGER_EmbS/include/stdbool.h C:/SEGGER_EmbS/include/stdint.h \
  ../../../../../../components/softdevice/s132/headers/ble.h \
  ../../../../../../components/softdevice/s132/headers/nrf_svc.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
@@ -30,8 +29,7 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/ble_conn_state.o: \
  ../../../../../../components/softdevice/s132/headers/ble_gap.h \
  ../../../../../../components/libraries/atomic/nrf_atomic.h \
  ../../../../../../components/libraries/util/sdk_common.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/string.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
+ C:/SEGGER_EmbS/include/string.h C:/SEGGER_EmbS/include/__crossworks.h \
  ../config/sdk_config.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
@@ -39,12 +37,12 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/ble_conn_state.o: \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_util.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stddef.h \
+ C:/SEGGER_EmbS/include/stddef.h \
  ../../../../../../components/libraries/util/sdk_macros.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/atomic_flags/nrf_atflags.h \
  ../../../../../../components/libraries/util/app_error.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
+ C:/SEGGER_EmbS/include/stdio.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
  ../../../../../../components/softdevice/common/nrf_sdh_ble.h \
  ../../../../../../components/libraries/util/app_util.h \

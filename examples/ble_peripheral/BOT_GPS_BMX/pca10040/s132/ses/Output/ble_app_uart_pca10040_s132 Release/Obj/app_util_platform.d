@@ -1,7 +1,7 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/app_util_platform.o: \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/util/app_util_platform.c \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/util/app_util_platform.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_util_platform.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_util_platform.h \
+ C:/SEGGER_EmbS/include/stdint.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
@@ -20,12 +20,11 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/app_util_platform.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error_soc.h \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/util/nrf_assert.h \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/util/app_error.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/util/sdk_errors.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\nrf_assert.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_error.h \
+ C:/SEGGER_EmbS/include/stdio.h C:/SEGGER_EmbS/include/__crossworks.h \
+ C:/SEGGER_EmbS/include/stdbool.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/util/nordic_common.h \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/util/app_error_weak.h
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\nordic_common.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_error_weak.h

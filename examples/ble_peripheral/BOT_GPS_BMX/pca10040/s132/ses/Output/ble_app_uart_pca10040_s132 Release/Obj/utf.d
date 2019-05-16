@@ -1,6 +1,5 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/utf.o: \
- /home/lenz/Documents/BOTE_Firmware/external/utf_converter/utf.c \
- /home/lenz/Documents/BOTE_Firmware/external/utf_converter/utf.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\external\utf_converter\utf.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\external\utf_converter\utf.h \
+ C:/SEGGER_EmbS/include/stddef.h C:/SEGGER_EmbS/include/__crossworks.h \
+ C:/SEGGER_EmbS/include/stdint.h

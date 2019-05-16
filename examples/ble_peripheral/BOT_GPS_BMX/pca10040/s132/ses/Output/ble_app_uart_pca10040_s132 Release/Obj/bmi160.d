@@ -1,10 +1,7 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/bmi160.o: \
- /home/lenz/Documents/BOTE_Firmware/examples/ble_peripheral/Bluenor_Beacon_GPS/bmi160.c \
- /home/lenz/Documents/BOTE_Firmware/examples/ble_peripheral/Bluenor_Beacon_GPS/bmi160.h \
- /home/lenz/Documents/BOTE_Firmware/examples/ble_peripheral/Bluenor_Beacon_GPS/bmi160_defs.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/math.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/string.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdlib.h
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOT_GPS_BMX\bmi160.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOT_GPS_BMX\bmi160.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOT_GPS_BMX\bmi160_defs.h \
+ C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/stddef.h \
+ C:/SEGGER_EmbS/include/__crossworks.h C:/SEGGER_EmbS/include/math.h \
+ C:/SEGGER_EmbS/include/string.h C:/SEGGER_EmbS/include/stdlib.h

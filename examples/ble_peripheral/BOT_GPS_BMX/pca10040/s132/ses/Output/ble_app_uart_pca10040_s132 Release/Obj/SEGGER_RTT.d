@@ -1,10 +1,10 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/SEGGER_RTT.o: \
- /home/lenz/Documents/BOTE_Firmware/external/segger_rtt/SEGGER_RTT.c \
- /home/lenz/Documents/BOTE_Firmware/external/segger_rtt/SEGGER_RTT.h \
- /home/lenz/Documents/BOTE_Firmware/external/segger_rtt/SEGGER_RTT_Conf.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\external\segger_rtt\SEGGER_RTT.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\external\segger_rtt\SEGGER_RTT.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\external\segger_rtt\SEGGER_RTT_Conf.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../components/libraries/util/app_util_platform.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
+ C:/SEGGER_EmbS/include/stdint.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
@@ -25,12 +25,10 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/SEGGER_RTT.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
+ C:/SEGGER_EmbS/include/stdio.h C:/SEGGER_EmbS/include/__crossworks.h \
+ C:/SEGGER_EmbS/include/stdbool.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
- ../config/sdk_config.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/string.h
+ ../config/sdk_config.h C:/SEGGER_EmbS/include/string.h

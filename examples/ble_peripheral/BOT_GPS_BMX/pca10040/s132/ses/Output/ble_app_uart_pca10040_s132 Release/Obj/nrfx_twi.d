@@ -1,12 +1,10 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/nrfx_twi.o: \
- /home/lenz/Documents/nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/src/nrfx_twi.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\modules\nrfx\drivers\src\nrfx_twi.c \
  ../../../../../../modules/nrfx/nrfx.h \
  ../../../../../../integration/nrfx/nrfx_config.h ../config/sdk_config.h \
  ../../../../../../modules/nrfx/drivers/nrfx_common.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
+ C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/stddef.h \
+ C:/SEGGER_EmbS/include/__crossworks.h C:/SEGGER_EmbS/include/stdbool.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
@@ -38,7 +36,7 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/nrfx_twi.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
+ C:/SEGGER_EmbS/include/stdio.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
@@ -50,11 +48,11 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/nrfx_twi.o: \
  ../../../../../../modules/nrfx/drivers/include/nrfx_twi.h \
  ../../../../../../modules/nrfx/hal/nrf_twi.h \
  ../../../../../../modules/nrfx/hal/nrf_gpio.h \
- /home/lenz/Documents/nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/src/prs/nrfx_prs.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\modules\nrfx\drivers\src\prs/nrfx_prs.h \
  ../../../../../../integration/nrfx/nrfx_log.h \
  ../../../../../../components/libraries/log/nrf_log.h \
  ../../../../../../components/libraries/util/sdk_common.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/string.h \
+ C:/SEGGER_EmbS/include/string.h \
  ../../../../../../components/libraries/util/sdk_os.h \
  ../../../../../../components/libraries/util/app_util.h \
  ../../../../../../components/libraries/util/sdk_macros.h \

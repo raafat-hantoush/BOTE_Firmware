@@ -1,10 +1,8 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/nrf_pwr_mgmt.o: \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/pwr_mgmt/nrf_pwr_mgmt.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\pwr_mgmt\nrf_pwr_mgmt.c \
  ../../../../../../components/libraries/util/sdk_common.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/string.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
+ C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/stdbool.h \
+ C:/SEGGER_EmbS/include/string.h C:/SEGGER_EmbS/include/__crossworks.h \
  ../config/sdk_config.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
@@ -12,8 +10,7 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/nrf_pwr_mgmt.o: \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_util.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stddef.h \
- ../../../../../../modules/nrfx/mdk/nrf.h \
+ C:/SEGGER_EmbS/include/stddef.h ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
  ../../../../../../components/toolchain/cmsis/include/core_cmInstr.h \
@@ -27,7 +24,7 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/nrf_pwr_mgmt.o: \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../components/libraries/util/sdk_macros.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/pwr_mgmt/nrf_pwr_mgmt.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\pwr_mgmt\nrf_pwr_mgmt.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/libraries/experimental_section_vars/nrf_section_iter.h \
  ../../../../../../components/libraries/experimental_section_vars/nrf_section.h \
@@ -53,7 +50,7 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/nrf_pwr_mgmt.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_error_soc.h \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
  ../../../../../../components/libraries/util/app_error.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
+ C:/SEGGER_EmbS/include/stdio.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
  ../../../../../../modules/nrfx/soc/nrfx_coredep.h \
  ../../../../../../components/libraries/util/sdk_resources.h \
@@ -65,7 +62,7 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/nrf_pwr_mgmt.o: \
  ../../../../../../components/libraries/log/src/nrf_log_ctrl_internal.h \
  ../../../../../../components/libraries/log/nrf_log_backend_interface.h \
  ../../../../../../components/libraries/memobj/nrf_memobj.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdlib.h \
+ C:/SEGGER_EmbS/include/stdlib.h \
  ../../../../../../components/libraries/balloc/nrf_balloc.h \
  ../../../../../../components/libraries/log/nrf_log_instance.h \
  ../../../../../../components/libraries/experimental_section_vars/nrf_section.h \

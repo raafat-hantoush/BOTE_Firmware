@@ -1,12 +1,10 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/ble_srv_common.o: \
- /home/lenz/Documents/BOTE_Firmware/components/ble/common/ble_srv_common.c \
- /home/lenz/Documents/BOTE_Firmware/components/ble/common/ble_srv_common.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\ble\common\ble_srv_common.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\ble\common\ble_srv_common.h \
+ C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/stdbool.h \
  ../../../../../../components/softdevice/s132/headers/ble_types.h \
  ../../../../../../components/libraries/util/app_util.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
+ C:/SEGGER_EmbS/include/stddef.h C:/SEGGER_EmbS/include/__crossworks.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
@@ -35,10 +33,10 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/ble_srv_common.o: \
  ../../../../../../components/softdevice/s132/headers/ble_gatts.h \
  ../../../../../../components/softdevice/s132/headers/ble_gap.h \
  ../../../../../../components/softdevice/s132/headers/ble_gatt.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/string.h \
+ C:/SEGGER_EmbS/include/string.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../components/libraries/util/app_error.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
+ C:/SEGGER_EmbS/include/stdio.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_error_weak.h

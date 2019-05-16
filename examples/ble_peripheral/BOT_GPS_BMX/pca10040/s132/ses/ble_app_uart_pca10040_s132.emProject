@@ -95,10 +95,10 @@
       <file file_name="../../../gps.c" />
       <file file_name="../../../ADC.c" />
       <file file_name="../../../I2C.c" />
-      <file file_name="../../../../../../../nRF5_SDK_15.3.0_59ac345/integration/nrfx/legacy/nrf_drv_twi.c" />
-      <file file_name="../../../../../../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/src/nrfx_twi.c" />
-      <file file_name="../../../../../../../nRF5_SDK_15.3.0_59ac345/modules/nrfx/drivers/src/nrfx_twim.c" />
       <file file_name="../../../bmi160.c" />
+      <file file_name="../../../../../../modules/nrfx/drivers/src/nrfx_twi.c" />
+      <file file_name="../../../../../../modules/nrfx/drivers/src/nrfx_twim.c" />
+      <file file_name="../../../../../../integration/nrfx/legacy/nrf_drv_twi.c" />
     </folder>
     <folder Name="nRF_Segger_RTT">
       <file file_name="../../../../../../external/segger_rtt/SEGGER_RTT.c" />
