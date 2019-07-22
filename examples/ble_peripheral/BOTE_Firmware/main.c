@@ -25,8 +25,6 @@
 #include "SEGGER_RTT.h"
 #include "ADC.h"
 #include "I2C.h"
-//#include "bmi160.h"
-//#include "battery_voltage.h"
 #define GPS_UART_RX 4
 //#if defined (UART_PRESENT)
 //#include "nrf_uart.h"
