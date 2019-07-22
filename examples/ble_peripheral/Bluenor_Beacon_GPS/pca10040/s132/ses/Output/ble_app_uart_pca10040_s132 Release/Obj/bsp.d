@@ -1,15 +1,13 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/bsp.o: \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/bsp/bsp.c \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/bsp/bsp.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\bsp\bsp.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\bsp\bsp.h \
+ C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/stdbool.h \
  ../../../../../../components/boards/boards.h \
  ../../../../../../modules/nrfx/hal/nrf_gpio.h \
  ../../../../../../modules/nrfx/nrfx.h \
  ../../../../../../integration/nrfx/nrfx_config.h ../config/sdk_config.h \
  ../../../../../../modules/nrfx/drivers/nrfx_common.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stddef.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
+ C:/SEGGER_EmbS/include/stddef.h C:/SEGGER_EmbS/include/__crossworks.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
@@ -41,7 +39,7 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/bsp.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
+ C:/SEGGER_EmbS/include/stdio.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
@@ -53,5 +51,5 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/bsp.o: \
  ../../../../../../components/boards/pca10040.h \
  ../../../../../../components/libraries/button/app_button.h \
  ../../../../../../components/libraries/util/app_error.h \
- /home/lenz/Documents/BOTE_Firmware/components/libraries/bsp/bsp_config.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\bsp\bsp_config.h \
  ../../../../../../components/libraries/timer/app_timer.h

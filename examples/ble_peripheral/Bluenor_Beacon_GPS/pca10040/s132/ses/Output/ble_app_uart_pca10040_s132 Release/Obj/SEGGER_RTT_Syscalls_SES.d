@@ -1,11 +1,11 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/SEGGER_RTT_Syscalls_SES.o: \
- /home/lenz/Documents/840-coded\ examples/BOTE_Firmware/external/segger_rtt/SEGGER_RTT_Syscalls_SES.c \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\external\segger_rtt\SEGGER_RTT_Syscalls_SES.c \
  ../config/sdk_config.h \
- /home/lenz/Documents/840-coded\ examples/BOTE_Firmware/external/segger_rtt/SEGGER_RTT.h \
- /home/lenz/Documents/840-coded\ examples/BOTE_Firmware/external/segger_rtt/SEGGER_RTT_Conf.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\external\segger_rtt\SEGGER_RTT.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\external\segger_rtt\SEGGER_RTT_Conf.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../components/libraries/util/app_util_platform.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
+ C:/SEGGER_EmbS/include/stdint.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
@@ -26,15 +26,12 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/SEGGER_RTT_Syscalls_SES.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
+ C:/SEGGER_EmbS/include/stdio.h C:/SEGGER_EmbS/include/__crossworks.h \
+ C:/SEGGER_EmbS/include/stdbool.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdarg.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/limits.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__libc.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__vfprintf.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__argtype.h
+ C:/SEGGER_EmbS/include/stdarg.h C:/SEGGER_EmbS/include/limits.h \
+ C:/SEGGER_EmbS/include/__libc.h C:/SEGGER_EmbS/include/__vfprintf.h \
+ C:/SEGGER_EmbS/include/__argtype.h

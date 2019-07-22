@@ -1172,10 +1172,10 @@ int main(void)
     bool erase_bonds;
     //gps_on_pin
     nrf_gpio_cfg_output(11);
-//    nrf_gpio_cfg_output(13);
+   nrf_gpio_cfg_output(13);
 //     nrf_gpio_cfg_output(18);
 //      nrf_gpio_cfg_output(20);
-//    nrf_gpio_pin_set(13);
+    nrf_gpio_pin_set(13);
 //    nrf_gpio_pin_clear(13);
 //    nrf_gpio_pin_set(20);
 //    nrf_gpio_pin_set(18);

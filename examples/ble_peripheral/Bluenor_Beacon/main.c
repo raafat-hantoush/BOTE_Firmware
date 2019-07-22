@@ -88,10 +88,10 @@
 
 #define APP_BLE_OBSERVER_PRIO           3                                           /**< Application's BLE observer priority. You shouldn't need to modify this value. */
 
-#define APP_ADV_INTERVAL                1120  //BOTE 700 mili seconds  old 64                                        /**< The advertising interval (in units of 0.625 ms. This value corresponds to 40 ms). */
+#define APP_ADV_INTERVAL                64                                          /**< The advertising interval (in units of 0.625 ms. This value corresponds to 40 ms). */
 //#define APP_ADV_INTERVAL                1600 
 
-#define APP_ADV_DURATION               100 //BOTE 1 seconds OLD 18000                                       /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
+#define APP_ADV_DURATION                18000                                       /**< The advertising duration (180 seconds) in units of 10 milliseconds. */
 
 #define MIN_CONN_INTERVAL               MSEC_TO_UNITS(20, UNIT_1_25_MS)             /**< Minimum acceptable connection interval (20 ms), Connection interval uses 1.25 ms units. */
 #define MAX_CONN_INTERVAL               MSEC_TO_UNITS(75, UNIT_1_25_MS)             /**< Maximum acceptable connection interval (75 ms), Connection interval uses 1.25 ms units. */
@@ -124,7 +124,7 @@ static uint16_t   m_ble_nus_max_data_len = BLE_GATT_ATT_MTU_DEFAULT - 3;        
 static bool is_connect = false;
 
 //#define APP_RSSI									1
-//#define APP_PA_LAN							1
+#define APP_PA_LAN							1
 //#define BT52810
 //#define BT840
 //#define USE_CODED_PHY						1
@@ -170,7 +170,6 @@ APP_TIMER_DEF(m_heart_rate_timer_id);
 /**< Heart rate measurement interval (ticks). */
 #define HEART_RATE_MEAS_INTERVAL         APP_TIMER_TICKS(500)         //500ms  
 
-#define APP_PA_LAN
 #ifdef KEEP_SEND
 static bool keep_send_flg = false;
 
@@ -209,7 +208,7 @@ static test_params_t m_test_params =
 		#ifdef BT840
 			#define DEVICE_NAME                     "BlueNor 52840X"  
 		#else
-			#define DEVICE_NAME                     "BOTE POC"//"BlueNor 52832X"                               /**< Name of device. Will be included in the advertising data. */
+			#define DEVICE_NAME                     "BlueNor 52832X"                               /**< Name of device. Will be included in the advertising data. */
 		#endif
 	#endif
 #else
@@ -1005,10 +1004,6 @@ static void idle_state_handle(void)
 {
     UNUSED_RETURN_VALUE(NRF_LOG_PROCESS());
     nrf_pwr_mgmt_run();
-    
-    //BOTE put system shut down
-    //sd_power_system_off();
-
 }
 
 
@@ -1185,7 +1180,6 @@ int main(void)
     uart_init();
     log_init();
     timers_init();
-    /// BOTE not needed 
     //buttons_leds_init(&erase_bonds);
     power_management_init();
     ble_stack_init();
@@ -1237,7 +1231,7 @@ int main(void)
 		}
 	*/	
     //advertising_init();
-                advertising_data_set();
+		advertising_data_set();
     conn_params_init();
 #ifdef APP_PA_LAN	
 		pa_lna_setup();
@@ -1253,12 +1247,11 @@ int main(void)
     NRF_LOG_INFO("Debug logging for UART over RTT started.");
     advertising_start();
 
-    // BOTE not needed
-//    uint32_t err_code = app_timer_create(&m_heart_rate_timer_id,
-//                                APP_TIMER_MODE_REPEATED,
-//                                heart_rate_meas_timeout_handler);
-//    err_code = app_timer_start(m_heart_rate_timer_id, HEART_RATE_MEAS_INTERVAL, NULL);
-//    APP_ERROR_CHECK(err_code);	
+    uint32_t err_code = app_timer_create(&m_heart_rate_timer_id,
+                                APP_TIMER_MODE_REPEATED,
+                                heart_rate_meas_timeout_handler);
+    err_code = app_timer_start(m_heart_rate_timer_id, HEART_RATE_MEAS_INTERVAL, NULL);
+    APP_ERROR_CHECK(err_code);	
 
 /*
 			app_uart_close();

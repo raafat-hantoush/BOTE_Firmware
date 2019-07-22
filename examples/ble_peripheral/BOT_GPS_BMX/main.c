@@ -52,7 +52,7 @@
 #define MIN_CONN_INTERVAL               MSEC_TO_UNITS(20, UNIT_1_25_MS)             /**< Minimum acceptable connection interval (20 ms), Connection interval uses 1.25 ms units. */
 #define MAX_CONN_INTERVAL               MSEC_TO_UNITS(75, UNIT_1_25_MS)             /**< Maximum acceptable connection interval (75 ms), Connection interval uses 1.25 ms units. */
 #define SLAVE_LATENCY                   0                                           /**< Slave latency. */
-#define CONN_SUP_TIMEOUT                MSEC_TO_UNITS(4000, UNIT_10_MS)             /**< Connection supervisory timeout (4 seconds), Supervision Timeout uses 10 ms units. */
+#define CONN_SUP_TIMEOUT                MSEC_TO_UNITS(20000, UNIT_10_MS)             /**< Connection supervisory timeout (4 seconds), Supervision Timeout uses 10 ms units. */
 #define FIRST_CONN_PARAMS_UPDATE_DELAY  APP_TIMER_TICKS(5000)                       /**< Time from initiating event (connect or start of notification) to first time sd_ble_gap_conn_param_update is called (5 seconds). */
 #define NEXT_CONN_PARAMS_UPDATE_DELAY   APP_TIMER_TICKS(30000)                      /**< Time between each call to sd_ble_gap_conn_param_update after the first call (30 seconds). */
 #define MAX_CONN_PARAMS_UPDATE_COUNT    3                                           /**< Number of attempts before giving up the connection parameter negotiation. */
@@ -350,40 +350,40 @@ static void nus_data_handler(ble_nus_evt_t * p_evt)
 
         SEGGER_RTT_printf(0,"Received data from BLE NUS. \n");
         SEGGER_RTT_printf(0,p_evt->params.rx_data.p_data, p_evt->params.rx_data.length);
-//
-//        for (uint32_t i = 0; i < p_evt->params.rx_data.length; i++)
-//        {
-//            do
-//            {
-//                err_code = app_uart_put(p_evt->params.rx_data.p_data[i]);
-//                if ((err_code != NRF_SUCCESS) && (err_code != NRF_ERROR_BUSY))
-//                {
-//                    SEGGER_RTT_printf(0,"Failed receiving NUS message. Error 0x%x. ", err_code);
-//                    APP_ERROR_CHECK(err_code);
-//                }
-//            } while (err_code == NRF_ERROR_BUSY);
-//        }
-//        if (p_evt->params.rx_data.p_data[p_evt->params.rx_data.length - 1] == '\r')
-//        {
-//            while (app_uart_put('\n') == NRF_ERROR_BUSY);
-//        }
-//        if(p_evt->params.rx_data.length == 6){
-//	if(p_evt->params.rx_data.p_data[0] == 'L' && p_evt->params.rx_data.p_data[1] == 'e' && p_evt->params.rx_data.p_data[2] == 'd' && p_evt->params.rx_data.p_data[3] == 'O'){
-//	if(p_evt->params.rx_data.p_data[4] == 'n'){
-//#ifdef BT840
-//								nrf_gpio_pin_clear(17);
-//#else								
-//        nrf_gpio_pin_clear(18);				
-//#endif								
-//	}else if(p_evt->params.rx_data.p_data[4] == 'f'){
-//#ifdef BT840
-//								nrf_gpio_pin_set(17);
-//#else									
-//								nrf_gpio_pin_set(18);	
-//#endif								
-//						}
-//					}
-//			}	
+
+        for (uint32_t i = 0; i < p_evt->params.rx_data.length; i++)
+        {
+            do
+            {
+                err_code = app_uart_put(p_evt->params.rx_data.p_data[i]);
+                if ((err_code != NRF_SUCCESS) && (err_code != NRF_ERROR_BUSY))
+                {
+                    SEGGER_RTT_printf(0,"Failed receiving NUS message. Error 0x%x. ", err_code);
+                    APP_ERROR_CHECK(err_code);
+                }
+            } while (err_code == NRF_ERROR_BUSY);
+        }
+        if (p_evt->params.rx_data.p_data[p_evt->params.rx_data.length - 1] == '\r')
+        {
+            while (app_uart_put('\n') == NRF_ERROR_BUSY);
+        }
+        if(p_evt->params.rx_data.length == 6){
+	if(p_evt->params.rx_data.p_data[0] == 'L' && p_evt->params.rx_data.p_data[1] == 'e' && p_evt->params.rx_data.p_data[2] == 'd' && p_evt->params.rx_data.p_data[3] == 'O'){
+	if(p_evt->params.rx_data.p_data[4] == 'n'){
+#ifdef BT840
+								nrf_gpio_pin_clear(17);
+#else								
+        nrf_gpio_pin_set(13);				
+#endif								
+	}else if(p_evt->params.rx_data.p_data[4] == 'f'){
+#ifdef BT840
+								nrf_gpio_pin_set(17);
+#else									
+								nrf_gpio_pin_clear(13);	
+#endif								
+						}
+					}
+			}	
     }
 
 }
@@ -531,10 +531,11 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
         case BLE_GAP_EVT_CONNECTED:
             SEGGER_RTT_printf(0,"Connected \n");
             is_connect = true;
-            nrf_gpio_pin_set(14);
-            nrf_gpio_pin_set(13);
-            err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
-            APP_ERROR_CHECK(err_code);
+            //raafat
+            //nrf_gpio_pin_set(14);
+            //nrf_gpio_pin_set(13);
+            //err_code = bsp_indication_set(BSP_INDICATE_CONNECTED);
+            //APP_ERROR_CHECK(err_code);
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
             err_code = nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle);
             APP_ERROR_CHECK(err_code);
@@ -550,8 +551,8 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
         case BLE_GAP_EVT_DISCONNECTED:
             SEGGER_RTT_printf(0,"Disconnected \n");
             is_connect = false;
-            nrf_gpio_pin_set(13);
-            nrf_gpio_pin_set(14);
+            //nrf_gpio_pin_set(13);
+            //nrf_gpio_pin_set(14);
             // LED indication will be changed when advertising starts.
             m_conn_handle = BLE_CONN_HANDLE_INVALID;
             NVIC_SystemReset();	
@@ -1004,14 +1005,15 @@ static void heart_rate_meas_timeout_handler(void * p_context)
     SEGGER_RTT_printf(0,"Wakeup pin status %d\n",nrf_gpio_pin_read(7));
     SEGGER_RTT_printf(0,"Charging status %d\n",nrf_gpio_pin_read(23));
     int16_t VBAT = GetBatteryVoltage1();
-    if (readByte(0x69,0x00) == 0xD8)
-    {
-      SEGGER_RTT_printf(0,"BMX160 detected\n");
-
-    }
-    int step1 = readByte(0x69,0x21);
-    int step2 = readByte(0x69,0x20);
-    SEGGER_RTT_printf(0,"Stepcounter %d, %d \n", step1,step2);
+    //raafat
+//    if (readByte(0x69,0x00) == 0xD8)
+//    {
+//      SEGGER_RTT_printf(0,"BMX160 detected\n");
+//
+//    }
+//    int step1 = readByte(0x69,0x21);
+//    int step2 = readByte(0x69,0x20);
+//    SEGGER_RTT_printf(0,"Stepcounter %d, %d \n", step1,step2);
  		if(is_connect){
                 SEGGER_RTT_printf(0,"Connected Timer handler\n");
                 cnt++;
@@ -1019,8 +1021,9 @@ static void heart_rate_meas_timeout_handler(void * p_context)
 		cnt = 0x30;
                 gps_test[63] = cnt;
                 packet[55] = VBAT*5;
-                packet[0] = step1;
-                packet[1] = step2;
+                //raafat
+                //packet[0] = step1;
+                //packet[1] = step2;
                 
                 packet[63] = cnt;
                 uint16_t length = 64;
@@ -1172,10 +1175,10 @@ int main(void)
     bool erase_bonds;
     //gps_on_pin
     nrf_gpio_cfg_output(11);
-//    nrf_gpio_cfg_output(13);
+    //nrf_gpio_cfg_output(13);
 //     nrf_gpio_cfg_output(18);
 //      nrf_gpio_cfg_output(20);
-//    nrf_gpio_pin_set(13);
+    //nrf_gpio_pin_set(13);
 //    nrf_gpio_pin_clear(13);
 //    nrf_gpio_pin_set(20);
 //    nrf_gpio_pin_set(18);
@@ -1192,11 +1195,11 @@ int main(void)
       //
     }
     I2C_init();
-    writeByte(0x69, 0x7A, 0x15);
-    writeByte(0x69, 0x7B, 0x0B);
-    SEGGER_RTT_printf(0,"Stepcounter settings %d \n", (readByte(0x69,0x7B)));
-    writeByte(0x69, 0x52, 0x08);
-    SEGGER_RTT_printf(0,"Step counter activation\n");
+//    writeByte(0x69, 0x7A, 0x15);
+//    writeByte(0x69, 0x7B, 0x0B);
+//    SEGGER_RTT_printf(0,"Stepcounter settings %d \n", (readByte(0x69,0x7B)));
+//    writeByte(0x69, 0x52, 0x08);
+//    SEGGER_RTT_printf(0,"Step counter activation\n");
     uart_init(GPS_UART_RX);
     timers_init();
     power_management_init();
@@ -1213,10 +1216,7 @@ int main(void)
 #else
 	sd_power_dcdc_mode_set(NRF_POWER_DCDC_ENABLE);
 #endif	
-		
-
-
-
+	
     advertising_start();
 
     // BOTE not needed

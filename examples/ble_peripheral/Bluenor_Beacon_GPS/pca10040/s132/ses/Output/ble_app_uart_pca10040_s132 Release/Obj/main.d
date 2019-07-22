@@ -1,8 +1,7 @@
 Output/ble_app_uart_pca10040_s132\ Release/Obj/main.o: \
- /home/lenz/Documents/840-coded\ examples/BOTE_Firmware/examples/ble_peripheral/Bluenor_Beacon_GPS/main.c \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdint.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/string.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/__crossworks.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\Bluenor_Beacon_GPS\main.c \
+ C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/string.h \
+ C:/SEGGER_EmbS/include/__crossworks.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
@@ -18,7 +17,7 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/main.o: \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../components/softdevice/s132/headers/ble_hci.h \
  ../../../../../../components/ble/common/ble_advdata.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdbool.h \
+ C:/SEGGER_EmbS/include/stdbool.h \
  ../../../../../../components/softdevice/s132/headers/ble.h \
  ../../../../../../components/softdevice/s132/headers/nrf_svc.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
@@ -39,7 +38,7 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/main.o: \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_util.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stddef.h \
+ C:/SEGGER_EmbS/include/stddef.h \
  ../../../../../../components/libraries/util/sdk_macros.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/ble/ble_advertising/ble_advertising.h \
@@ -64,7 +63,7 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/main.o: \
  ../../../../../../components/ble/common/ble_srv_common.h \
  ../../../../../../components/libraries/timer/app_timer.h \
  ../../../../../../components/libraries/util/app_error.h \
- /usr/share/segger_embedded_studio_for_arm_4.16/include/stdio.h \
+ C:/SEGGER_EmbS/include/stdio.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
  ../../../../../../components/ble/ble_services/ble_nus/ble_nus.h \
  ../../../../../../components/ble/ble_link_ctx_manager/ble_link_ctx_manager.h \
@@ -95,10 +94,19 @@ Output/ble_app_uart_pca10040_s132\ Release/Obj/main.o: \
  ../../../../../../components/libraries/button/app_button.h \
  ../../../../../../components/libraries/pwr_mgmt/nrf_pwr_mgmt.h \
  ../../../../../../components/libraries/delay/nrf_delay.h \
- /home/lenz/Documents/840-coded\ examples/BOTE_Firmware/examples/ble_peripheral/Bluenor_Beacon_GPS/gps.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\Bluenor_Beacon_GPS\gps.h \
  ../../../../../../external/segger_rtt/SEGGER_RTT.h \
  ../../../../../../external/segger_rtt/SEGGER_RTT_Conf.h \
- /home/lenz/Documents/840-coded\ examples/BOTE_Firmware/examples/ble_peripheral/Bluenor_Beacon_GPS/ADC.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\Bluenor_Beacon_GPS\ADC.h \
  ../../../../../../integration/nrfx/legacy/nrf_drv_saadc.h \
  ../../../../../../modules/nrfx/drivers/include/nrfx_saadc.h \
- ../../../../../../modules/nrfx/hal/nrf_saadc.h
+ ../../../../../../modules/nrfx/hal/nrf_saadc.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\Bluenor_Beacon_GPS\I2C.h \
+ ../../../../../../integration/nrfx/legacy/nrf_drv_twi.h \
+ ../../../../../../modules/nrfx/drivers/include/nrfx_twim.h \
+ ../../../../../../modules/nrfx/hal/nrf_twim.h \
+ ../../../../../../modules/nrfx/drivers/include/nrfx_twi.h \
+ ../../../../../../modules/nrfx/hal/nrf_twi.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\Bluenor_Beacon_GPS\bmi160.h \
+ C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\Bluenor_Beacon_GPS\bmi160_defs.h \
+ C:/SEGGER_EmbS/include/math.h C:/SEGGER_EmbS/include/stdlib.h
