@@ -757,8 +757,6 @@ static void nus_data_handler(ble_nus_evt_t * p_evt)
                 // it happens user clicks button on and of several times.\
                  //this  to make sure to execute ONLY the last status
                 turn_on_cmd=false; 
-                adv_interval=3000;
-                txpower= -20;
                 turn_Off_GPS();
                 //advertising_stop();
                 //advertising_init();
@@ -772,10 +770,21 @@ static void nus_data_handler(ble_nus_evt_t * p_evt)
                 // it happens user clicks button on and of several times.\
                  //this  to make sure to execute ONLY the last status
                 turn_off_cmd=false; 
-                adv_interval=200;
-                txpower= 0;
                 turn_ON_GPS();
             
+            }
+
+            // System Reset 
+            if(p_evt->params.rx_data.p_data[0] == 0x2){
+            SEGGER_RTT_printf(0,"System RESET. \n");
+              NVIC_SystemReset();
+            }
+
+            // NIGHT MODE 
+            if(p_evt->params.rx_data.p_data[0] == 0x3){
+              SEGGER_RTT_printf(0,"NIGHT MODE. \n");
+              adv_interval=5000;
+              txpower= -20;
             }
           
       }
@@ -790,17 +799,18 @@ static void timer_handler(void * p_context)
 //char nus_message[35]="" ;
 char* gps_status;  //,adv_intval="adv_intval_";
 
-if(!is_gps_fixed() && !is_connect && gps_enabled ){
-  SEGGER_RTT_printf(0,"Waiting GPS for initial fix.\n");
-  turn_ON_GPS();
-  }
+//if(!is_gps_fixed() && !is_connect && gps_enabled ){
+//  SEGGER_RTT_printf(0,"Waiting GPS for initial fix.\n");
+//  turn_ON_GPS();
+//  }
  
 //SEGGER_RTT_printf(0,"\r\nTimer handler\r\n");
   //get_gps_local(&packet[3]);
 
   SEGGER_RTT_printf(0,"Wakeup pin status %d\n",nrf_gpio_pin_read(7));
+  nrf_gpio_cfg_input(23,NRF_GPIO_PIN_NOPULL);
   SEGGER_RTT_printf(0,"Charging status %d\n",nrf_gpio_pin_read(23));
-    SEGGER_RTT_printf(0,"TX POWER  %d\n",txpower);
+  SEGGER_RTT_printf(0,"TX POWER  %d\n",txpower);
   if(gps_enabled) {SEGGER_RTT_printf(0,"gps_enabled is TRUE\n"); }else{SEGGER_RTT_printf(0,"gps_enabled is FALSE\n"); }
   
   // in the connected mode
@@ -811,21 +821,24 @@ if(!is_gps_fixed() && !is_connect && gps_enabled ){
     int VBAT1=VBAT;
     SEGGER_RTT_printf(0,"Battery level as integer %d\n",VBAT1);
     int i=4;
-    uint8_t batt_level_string[10]="";
+    uint8_t nus_message[10]="";
     // splitting the VBAT into digits each
     while (i>=0)
     {
       //SEGGER_RTT_printf(0,"%d\n", VBAT1 % 10);
-      batt_level_string[i] = VBAT1 % 10;
-      //SEGGER_RTT_printf(0,"%d\n", batt_level_string[i]);
+      nus_message[i] = VBAT1 % 10;
+      //SEGGER_RTT_printf(0,"%d\n", nus_message[i]);
       VBAT1 /= 10;
       i--;
     }
   
-    SEGGER_RTT_printf(0,"battery level message %d%d%d%d%d\n", batt_level_string[0], batt_level_string[1],batt_level_string[2],
-    batt_level_string[3],batt_level_string[4]);
+    SEGGER_RTT_printf(0,"battery level message %d%d%d%d%d\n", nus_message[0], nus_message[1],nus_message[2],
+    nus_message[3],nus_message[4]);
   
-    batt_level_string[9]=cnt;   //  adding counter to the last byte  of the message 
+    if (nrf_gpio_pin_read(7)==1) nus_message[7]=0x01 ;else nus_message[7]=0x00 ;
+    // YES CHARGING status equal 0 when it is charging 
+    if (nrf_gpio_pin_read(23)==0) nus_message[8]=0x01 ;else nus_message[8]=0x00 ;
+    nus_message[9]=cnt;   //  adding counter to the last byte  of the message 
     cnt++;
     if(cnt > 0x39)  cnt = 0x30;
     //gps_test[63] = cnt;
@@ -839,65 +852,78 @@ if(!is_gps_fixed() && !is_connect && gps_enabled ){
       //strcat(adv_intval, adv_interval);
       //sprintf(nus_message, "%s",gps_status);//,adv_interval);
 
-      ble_nus_data_send(&m_nus, batt_level_string, &length,m_conn_handle);
+      ble_nus_data_send(&m_nus, nus_message, &length,m_conn_handle);
   
-    }
+    }// end of if connected
 
-    if(gps_enabled && !is_connect){
-      SEGGER_RTT_printf(0,"DisConnected Timer handler\n");
-      txpower=0;  //  was set here because before was not able to communicate after connection closed.
-      advertising_stop();
-      ret_code_t err_code = nrf_sdh_disable_request();
-      APP_ERROR_CHECK(err_code);
-      init_ble_stack_service();;   // reinit ble stack and its services.
-      advertising_init();
-      advertising_start();
-    }
+    else
+    { //not conencted 
 
-    //  after disconnect and with turn off mode , the system disables the PA and reinit advertising
-    if(turn_off_cmd && !is_connect){      
-      SEGGER_RTT_printf(0,"Off command sent by the user \n");
-      //advertising_stop();
-      //disable PA
-      nrf_gpio_pin_clear(APP_PA_PIN);
-      nrf_gpio_pin_clear(APP_LNA_PIN);
-      advertising_stop();
-      //uint32_t err_code = sd_ble_opt_set(BLE_COMMON_OPT_PA_LNA, NULL);
-      ret_code_t err_code = nrf_sdh_disable_request();
-      APP_ERROR_CHECK(err_code);
-      init_ble_stack_service();;   // reinit ble stack and its services.
-      txpower= -20;
-      advertising_init();
-      advertising_start();
-      turn_off_cmd=false;
-    }
+      //  after disconnect and with turn off mode , the system disables the PA and reinit advertising
+      if(turn_off_cmd){      
+        SEGGER_RTT_printf(0,"Off command sent by the user \n");
+        //advertising_stop();
+        //disable PA
+        nrf_gpio_pin_clear(APP_PA_PIN);
+        nrf_gpio_pin_clear(APP_LNA_PIN);
+        advertising_stop();
+        //uint32_t err_code = sd_ble_opt_set(BLE_COMMON_OPT_PA_LNA, NULL);
+        ret_code_t err_code = nrf_sdh_disable_request();
+        APP_ERROR_CHECK(err_code);
+        init_ble_stack_service();;   // reinit ble stack and its services.
+        adv_interval=3000;
+        txpower= -20;
+        advertising_init();
+        advertising_start();
+        turn_off_cmd=false;
+      }
 
-     //  after disconnect and with turn ON mode , the system will reinit advertising
-    if(turn_on_cmd && !is_connect){      
-      SEGGER_RTT_printf(0,"ON command sent by the user \n");
-      //enable PA
-      advertising_stop();
+       //  after disconnect and with turn ON mode, the system will reinit advertising.
+      if(turn_on_cmd){      
+        SEGGER_RTT_printf(0,"ON command sent by the user \n");
       
-      ret_code_t err_code = nrf_sdh_disable_request();
+        advertising_stop();
       
-      APP_ERROR_CHECK(err_code);
-      //nrf_delay_ms(10);
-      init_ble_stack_service();  // reinit ble stack and its services.
-      turn_on_cmd=false;
-      //pa_lna_setup();             //Enable the PA 
-      advertising_init();
-      advertising_start();
+        ret_code_t err_code = nrf_sdh_disable_request();
       
-    }
+        APP_ERROR_CHECK(err_code);
+        //nrf_delay_ms(10);
+        init_ble_stack_service();  // reinit ble stack and its services.
+        turn_on_cmd=false;
+        //pa_lna_setup();             //Enable the PA 
+        adv_interval=200;
+        txpower= 0;
+        advertising_init();
+        advertising_start();
+      
+      }
+      if(!is_gps_fixed() && gps_enabled){
+        SEGGER_RTT_printf(0,"Waiting GPS for initial fix.\n");
+        turn_ON_GPS();
 
-    if(is_gps_fixed() && !is_connect && gps_enabled)
-    {
-      toggle_GPS();
-      SEGGER_RTT_printf(0,"GPS toggeling.\n");
+        SEGGER_RTT_printf(0,"DisConnected Timer handler\n");
+        txpower=0;  //  was set here because before was not able to communicate after connection closed.
+        advertising_stop();
+        //disable PA
+        nrf_gpio_pin_clear(APP_PA_PIN);
+        nrf_gpio_pin_clear(APP_LNA_PIN);
+  //      ret_code_t err_code = nrf_sdh_disable_request();
+  //      APP_ERROR_CHECK(err_code);
+  //      init_ble_stack_service();;   // reinit ble stack and its services.
+        advertising_init();
+        advertising_start();
+      }
 
-      /// Enableing PA with Tx power +4 when 
-      nrf_gpio_cfg_input(7,NRF_GPIO_PIN_PULLUP);	
-      if (nrf_gpio_pin_read(7) == 0){  // when GPS is OFF enable PA
+
+
+      if(is_gps_fixed() &&  gps_enabled)
+      {
+        //toggle_GPS();
+        //SEGGER_RTT_printf(0,"GPS toggeling.\n");
+
+        /// Enableing PA with Tx power +4 when 
+        //nrf_gpio_cfg_input(7,NRF_GPIO_PIN_PULLUP);	
+        //if (nrf_gpio_pin_read(7) == 0){  // when GPS is OFF enable PA
         //enable PA
         advertising_stop();
         //disable Soft device to reinit the stack
@@ -910,9 +936,9 @@ if(!is_gps_fixed() && !is_connect && gps_enabled ){
         //APP_ERROR_CHECK(err_code);
         advertising_init();
         advertising_start();
+        //}
       }
     }
-
 }
 
 // initialise BLE services
@@ -930,7 +956,6 @@ static void init_ble_stack_service(){
  */
 int main(void)
 {
-
     bool erase_bonds;
     //gps_on_pin
     nrf_gpio_cfg_output(11);
@@ -979,3 +1004,4 @@ int main(void)
 /**
  * @}
  */
+
