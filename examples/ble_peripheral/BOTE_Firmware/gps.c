@@ -133,13 +133,13 @@ void gps_handler(uint8_t c)
 
 void uart_error_handle(app_uart_evt_t * p_event)
 {
-    //printf("UART error handler\n");
-    printf(".");
+    //SEGGER_RTT_printf(0,"UART error handler\n");
+    //printf(".");
     if(p_event->evt_type == APP_UART_DATA_READY)
     {
         uint8_t data;
         app_uart_get(&data);
-        //SEGGER_RTT_printf(0,"String from UART %s \n", data );
+        SEGGER_RTT_printf(0,"String from UART %s \n", data );
         gps_handler(data);
         
     }

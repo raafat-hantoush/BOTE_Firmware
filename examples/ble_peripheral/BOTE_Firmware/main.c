@@ -48,6 +48,7 @@ bool gps_enabled=false;
 bool is_connect = false;
 bool turn_off_cmd=false;    // It is true when a OFF command send by user service.
 bool turn_on_cmd=false;    // It is true when a ON command send by user service.
+bool uart_disabled = true;
 int VBAT;
 uint8_t  battery_level;
 
@@ -545,7 +546,11 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
             err_code = nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle);
             APP_ERROR_CHECK(err_code);
-			
+            //init UART 
+            if(uart_disabled){
+            uart_init(GPS_UART_RX);
+            uart_disabled=false;
+            }
             break;
 
         case BLE_GAP_EVT_DISCONNECTED:
@@ -757,6 +762,7 @@ static void nus_data_handler(ble_nus_evt_t * p_evt)
                 // it happens user clicks button on and of several times.\
                  //this  to make sure to execute ONLY the last status
                 turn_on_cmd=false; 
+
                 turn_Off_GPS();
                 //advertising_stop();
                 //advertising_init();
@@ -809,7 +815,7 @@ char* gps_status;  //,adv_intval="adv_intval_";
 
   SEGGER_RTT_printf(0,"Wakeup pin status %d\n",nrf_gpio_pin_read(7));
   nrf_gpio_cfg_input(23,NRF_GPIO_PIN_NOPULL);
-  SEGGER_RTT_printf(0,"Charging status %d\n",nrf_gpio_pin_read(23));
+  SEGGER_RTT_printf(0,"Charging status %d\n",!nrf_gpio_pin_read(23));
   SEGGER_RTT_printf(0,"TX POWER  %d\n",txpower);
   if(gps_enabled) {SEGGER_RTT_printf(0,"gps_enabled is TRUE\n"); }else{SEGGER_RTT_printf(0,"gps_enabled is FALSE\n"); }
   
@@ -891,11 +897,10 @@ char* gps_status;  //,adv_intval="adv_intval_";
         init_ble_stack_service();  // reinit ble stack and its services.
         turn_on_cmd=false;
         //pa_lna_setup();             //Enable the PA 
-        adv_interval=200;
+        adv_interval=1000;
         txpower= 0;
         advertising_init();
-        advertising_start();
-      
+        advertising_start();    
       }
       if(!is_gps_fixed() && gps_enabled){
         SEGGER_RTT_printf(0,"Waiting GPS for initial fix.\n");
@@ -955,7 +960,7 @@ static void init_ble_stack_service(){
 /**@brief Application main function.
  */
 int main(void)
-{
+  {
     bool erase_bonds;
     //gps_on_pin
     nrf_gpio_cfg_output(11);
@@ -973,8 +978,7 @@ int main(void)
 //      //
 //    }
     //I2C_init();
-
-    uart_init(GPS_UART_RX);
+    //uart_init(GPS_UART_RX); // will inititalise only when GPS is ON 
     timers_init();
     // init ble stack and services
     init_ble_stack_service();
