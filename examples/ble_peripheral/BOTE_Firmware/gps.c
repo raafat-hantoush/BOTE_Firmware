@@ -55,12 +55,12 @@ void get_gps_test(char *gps_out)
     tok = strtok(NULL,",");
     
   } 
-  latitude = atof(lat);
   sprintf(gps_local, "%s,%s,%s,%s",lat,latl,lon,lonl);
   if (latl=="N" || latl=="S") { gps_fixed=true;}
     else{gps_fixed=false;}
   //printf("Latitude  value is %s \n",lat);
   SEGGER_RTT_printf(0,"GPS DATA = %s time = %s\n", gps_local, UTC);
+  latitude = atof(lat);
 }
 
 
