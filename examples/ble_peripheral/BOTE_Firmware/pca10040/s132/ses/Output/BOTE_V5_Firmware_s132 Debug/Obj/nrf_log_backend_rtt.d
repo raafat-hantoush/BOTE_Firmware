@@ -1,8 +1,10 @@
 Output/BOTE_V5_Firmware_s132\ Debug/Obj/nrf_log_backend_rtt.o: \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\log\src\nrf_log_backend_rtt.c \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\log\src\nrf_log_backend_rtt.c \
  ../../../../../../components/libraries/util/sdk_common.h \
- C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/stdbool.h \
- C:/SEGGER_EmbS/include/string.h C:/SEGGER_EmbS/include/__crossworks.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdint.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdbool.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/string.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/__crossworks.h \
  ../config/sdk_config.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
@@ -10,7 +12,8 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/nrf_log_backend_rtt.o: \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_util.h \
- C:/SEGGER_EmbS/include/stddef.h ../../../../../../modules/nrfx/mdk/nrf.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stddef.h \
+ ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
  ../../../../../../components/toolchain/cmsis/include/core_cmInstr.h \
@@ -27,7 +30,7 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/nrf_log_backend_rtt.o: \
  ../../../../../../components/libraries/log/nrf_log_backend_rtt.h \
  ../../../../../../components/libraries/log/nrf_log_backend_interface.h \
  ../../../../../../components/libraries/memobj/nrf_memobj.h \
- C:/SEGGER_EmbS/include/stdlib.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdlib.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/libraries/balloc/nrf_balloc.h \
  ../../../../../../components/libraries/util/app_util_platform.h \
@@ -37,20 +40,20 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/nrf_log_backend_rtt.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_error_soc.h \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
  ../../../../../../components/libraries/util/app_error.h \
- C:/SEGGER_EmbS/include/stdio.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdio.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
  ../../../../../../components/libraries/util/app_util.h \
  ../../../../../../components/libraries/log/nrf_log_instance.h \
  ../../../../../../components/libraries/experimental_section_vars/nrf_section.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../components/libraries/log/nrf_log_types.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\log\src\nrf_log_backend_serial.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\log\src\nrf_log_backend_serial.h \
  ../../../../../../components/libraries/log/nrf_log_backend_interface.h \
  ../../../../../../external/fprintf/nrf_fprintf.h \
  ../../../../../../components/libraries/log/nrf_log_str_formatter.h \
  ../../../../../../components/libraries/log/nrf_log_ctrl.h \
  ../../../../../../components/libraries/log/src/nrf_log_ctrl_internal.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\log\src\nrf_log_internal.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\log\src\nrf_log_internal.h \
  ../../../../../../components/libraries/log/nrf_log_types.h \
  ../../../../../../components/libraries/delay/nrf_delay.h \
  ../../../../../../modules/nrfx/nrfx.h \

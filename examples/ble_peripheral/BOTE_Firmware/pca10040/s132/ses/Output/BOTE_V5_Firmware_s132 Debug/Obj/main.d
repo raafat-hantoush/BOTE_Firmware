@@ -1,7 +1,9 @@
 Output/BOTE_V5_Firmware_s132\ Debug/Obj/main.o: \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\main.c \
- C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/string.h \
- C:/SEGGER_EmbS/include/__crossworks.h C:/SEGGER_EmbS/include/stdbool.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\main.c \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdint.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/string.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/__crossworks.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdbool.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
@@ -37,7 +39,7 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/main.o: \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_util.h \
- C:/SEGGER_EmbS/include/stddef.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stddef.h \
  ../../../../../../components/libraries/util/sdk_macros.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/ble/ble_advertising/ble_advertising.h \
@@ -62,7 +64,7 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/main.o: \
  ../../../../../../components/ble/common/ble_srv_common.h \
  ../../../../../../components/libraries/timer/app_timer.h \
  ../../../../../../components/libraries/util/app_error.h \
- C:/SEGGER_EmbS/include/stdio.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdio.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
  ../../../../../../components/ble/ble_services/ble_nus/ble_nus.h \
  ../../../../../../components/ble/ble_link_ctx_manager/ble_link_ctx_manager.h \
@@ -93,15 +95,16 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/main.o: \
  ../../../../../../components/libraries/button/app_button.h \
  ../../../../../../components/libraries/pwr_mgmt/nrf_pwr_mgmt.h \
  ../../../../../../components/libraries/delay/nrf_delay.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\gps.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\SEGGER_RTT.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\SEGGER_RTT_Conf.h \
- C:/SEGGER_EmbS/include/stdlib.h C:/SEGGER_EmbS/include/stdarg.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\ADC.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\gps.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\SEGGER_RTT.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\SEGGER_RTT_Conf.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdlib.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdarg.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\ADC.h \
  ../../../../../../integration/nrfx/legacy/nrf_drv_saadc.h \
  ../../../../../../modules/nrfx/drivers/include/nrfx_saadc.h \
  ../../../../../../modules/nrfx/hal/nrf_saadc.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\I2C.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\I2C.h \
  ../../../../../../integration/nrfx/legacy/nrf_drv_twi.h \
  ../../../../../../modules/nrfx/drivers/include/nrfx_twim.h \
  ../../../../../../modules/nrfx/hal/nrf_twim.h \

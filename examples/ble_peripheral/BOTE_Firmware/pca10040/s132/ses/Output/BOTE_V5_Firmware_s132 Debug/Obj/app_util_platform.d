@@ -1,7 +1,7 @@
 Output/BOTE_V5_Firmware_s132\ Debug/Obj/app_util_platform.o: \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_util_platform.c \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_util_platform.h \
- C:/SEGGER_EmbS/include/stdint.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_util_platform.c \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_util_platform.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdint.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
@@ -20,11 +20,12 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/app_util_platform.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error_soc.h \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\nrf_assert.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_error.h \
- C:/SEGGER_EmbS/include/stdio.h C:/SEGGER_EmbS/include/__crossworks.h \
- C:/SEGGER_EmbS/include/stdbool.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\sdk_errors.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\util\nrf_assert.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_error.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdio.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/__crossworks.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdbool.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\util\sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\nordic_common.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_error_weak.h
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\util\nordic_common.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\util\app_error_weak.h
