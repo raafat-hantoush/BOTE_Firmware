@@ -857,29 +857,6 @@ static void nus_data_handler(ble_nus_evt_t * p_evt)
     
 static void timer_handler(void * p_context)
 { 
-   /*if(turn_on_cmd)
-   {
-   nrf_gpio_pin_set(LED);
-   nrf_gpio_pin_set(APP_PA_PIN);
-   nrf_gpio_pin_set(APP_LNA_PIN);
-   SEGGER_RTT_printf(0,"PA/LNA off \n");
-   advertising_stop();
-   adv_interval=200;
-   txpower=0;
-   advertising_init();
-   advertising_start();
-   }
-   if(turn_off_cmd)
-   {
-   nrf_gpio_pin_clear(LED);
-   nrf_gpio_pin_clear(APP_PA_PIN);
-   nrf_gpio_pin_clear(APP_LNA_PIN);
-   advertising_stop();
-   //txpower=-8;
-   adv_interval=1000;
-   advertising_init();
-   advertising_start();
-   }*/
     if(turn_on_cmd)
     {
       if (first_use)
@@ -895,6 +872,8 @@ static void timer_handler(void * p_context)
       }
       SEGGER_RTT_printf(0,"After acquisition \n");
       turn_Off_GPS();
+      nrf_gpio_pin_set(APP_PA_PIN);
+      nrf_gpio_pin_set(APP_LNA_PIN);
       advertising_init();
       advertising_start();
       nrf_delay_ms(20000);
@@ -1175,12 +1154,8 @@ int main(void)
     init_ble_stack_service();
    
      turn_Off_GPS();
-     // Advertising then without PA/LNA
-     //pa_lna_setup();
-     //nrf_gpio_pin_set(APP_PA_PIN);
-     //nrf_gpio_pin_set(APP_LNA_PIN);
-     //adv_interval=64;
-
+     pa_lna_setup();
+     
     advertising_init();
     advertising_start();
     uint32_t err_code = app_timer_create(&timer_id,
