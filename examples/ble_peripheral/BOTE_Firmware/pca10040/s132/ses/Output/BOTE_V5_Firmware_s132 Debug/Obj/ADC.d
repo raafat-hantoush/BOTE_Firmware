@@ -1,13 +1,15 @@
 Output/BOTE_V5_Firmware_s132\ Debug/Obj/ADC.o: \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\ADC.c \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\ADC.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\ADC.c \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\ADC.h \
  ../../../../../../integration/nrfx/legacy/nrf_drv_saadc.h \
  ../../../../../../modules/nrfx/drivers/include/nrfx_saadc.h \
  ../../../../../../modules/nrfx/nrfx.h \
  ../../../../../../integration/nrfx/nrfx_config.h ../config/sdk_config.h \
  ../../../../../../modules/nrfx/drivers/nrfx_common.h \
- C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/stddef.h \
- C:/SEGGER_EmbS/include/__crossworks.h C:/SEGGER_EmbS/include/stdbool.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdint.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stddef.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/__crossworks.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdbool.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
@@ -39,7 +41,7 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/ADC.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
- C:/SEGGER_EmbS/include/stdio.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdio.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_error_weak.h \

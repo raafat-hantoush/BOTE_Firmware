@@ -1,9 +1,10 @@
 Output/BOTE_V5_Firmware_s132\ Debug/Obj/gps.o: \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\gps.c \
- C:/SEGGER_EmbS/include/string.h C:/SEGGER_EmbS/include/__crossworks.h \
- C:/SEGGER_EmbS/include/stdbool.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\gps.c \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/string.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/__crossworks.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdbool.h \
  ../../../../../../components/libraries/uart/app_uart.h \
- C:/SEGGER_EmbS/include/stdint.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdint.h \
  ../../../../../../components/libraries/util/app_util_platform.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
@@ -25,7 +26,7 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/gps.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_nvic.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/libraries/util/app_error.h \
- C:/SEGGER_EmbS/include/stdio.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdio.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/nordic_common.h \
@@ -35,7 +36,7 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/gps.o: \
  ../../../../../../modules/nrfx/nrfx.h \
  ../../../../../../integration/nrfx/nrfx_config.h ../config/sdk_config.h \
  ../../../../../../modules/nrfx/drivers/nrfx_common.h \
- C:/SEGGER_EmbS/include/stddef.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stddef.h \
  ../../../../../../modules/nrfx/mdk/nrf_peripherals.h \
  ../../../../../../modules/nrfx/mdk/nrf52832_peripherals.h \
  ../../../../../../integration/nrfx/nrfx_glue.h \
@@ -51,8 +52,9 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/gps.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_sd_def.h \
  ../../../../../../modules/nrfx/drivers/nrfx_errors.h \
  ../../../../../../components/boards/pca10040.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\nmea.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\nmea.h \
  ../../../../../../components/libraries/delay/nrf_delay.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\SEGGER_RTT.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\SEGGER_RTT_Conf.h \
- C:/SEGGER_EmbS/include/stdlib.h C:/SEGGER_EmbS/include/stdarg.h
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\SEGGER_RTT.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\examples\ble_peripheral\BOTE_Firmware\SEGGER_RTT_Conf.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdlib.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdarg.h

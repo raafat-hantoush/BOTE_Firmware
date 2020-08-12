@@ -1,9 +1,11 @@
 Output/BOTE_V5_Firmware_s132\ Debug/Obj/nrf_atfifo.o: \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\atomic_fifo\nrf_atfifo.c \
- C:/SEGGER_EmbS/include/string.h C:/SEGGER_EmbS/include/__crossworks.h \
- C:/SEGGER_EmbS/include/stdint.h C:/SEGGER_EmbS/include/stdbool.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\atomic_fifo\nrf_atfifo.c \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/string.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/__crossworks.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdint.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stdbool.h \
  ../../../../../../components/libraries/util/app_util.h \
- C:/SEGGER_EmbS/include/stddef.h \
+ C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 4.22/include/stddef.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../modules/nrfx/mdk/nrf.h \
@@ -18,7 +20,7 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/nrf_atfifo.o: \
  ../../../../../../modules/nrfx/mdk/nrf51_to_nrf52.h \
  ../../../../../../modules/nrfx/mdk/nrf52_name_change.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\atomic_fifo\nrf_atfifo.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\atomic_fifo\nrf_atfifo.h \
  ../config/sdk_config.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
@@ -27,7 +29,7 @@ Output/BOTE_V5_Firmware_s132\ Debug/Obj/nrf_atfifo.o: \
  ../../../../../../components/libraries/log/nrf_log_instance.h \
  ../../../../../../components/libraries/experimental_section_vars/nrf_section.h \
  ../../../../../../components/libraries/log/nrf_log_types.h \
- C:\Users\rafae\Documents\GitHub\BOTE_Firmware\components\libraries\atomic_fifo\nrf_atfifo_internal.h \
+ C:\Users\hp\Documents\GitHub\BOTE_Firmware\components\libraries\atomic_fifo\nrf_atfifo_internal.h \
  ../../../../../../components/libraries/log/nrf_log.h \
  ../../../../../../components/libraries/util/sdk_common.h \
  ../../../../../../components/libraries/util/sdk_os.h \
