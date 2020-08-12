@@ -879,28 +879,7 @@ static void timer_handler(void * p_context)
    adv_interval=1000;
    advertising_init();
    advertising_start();
-   }
-  //start advertising and turning off the GPS after two minutes from activating it
-    /*advertising_stop();
-    turn_ON_GPS();
-    nrf_gpio_pin_clear(LED);
-    nrf_delay_ms(10000);
-    turn_Off_GPS();
-    nrf_gpio_pin_set(LED);
-    pa_lna_setup();
-    txpower=0;
-    advertising_init();
-    advertising_start();*/
-    /*if (turn_off_cmd)
-    {
-    advertising_stop();
-    //nrf_gpio_pin_clear(APP_PA_PIN);
-    //nrf_gpio_pin_clear(APP_LNA_PIN);
-    turn_Off_GPS();
-    txpower=-20;
-    advertising_init();
-    advertising_start();
-    }*/
+   }*/
     if(turn_on_cmd)
     {
       if (first_use)
@@ -909,7 +888,6 @@ static void timer_handler(void * p_context)
         advertising_stop();
         turn_ON_GPS();
         SEGGER_RTT_printf(0,"gps activate \n");
-        nrf_gpio_pin_clear(LED);
         app_timer_stop(timer_id);
         nrf_delay_ms(150000);
         first_use=false;
@@ -917,12 +895,10 @@ static void timer_handler(void * p_context)
       }
       SEGGER_RTT_printf(0,"After acquisition \n");
       turn_Off_GPS();
-      nrf_gpio_pin_set(LED);
       advertising_init();
       advertising_start();
       nrf_delay_ms(20000);
       SEGGER_RTT_printf(0,"Turn on again \n");
-      nrf_gpio_pin_clear(LED);
       advertising_stop();
       SEGGER_RTT_printf(0,"Here \n");
       turn_ON_GPS();
@@ -1197,14 +1173,7 @@ int main(void)
 
     //init ble stack and services
     init_ble_stack_service();
-    
-    //First signal acquisition
-    /*turn_ON_GPS();
-    uart_init(GPS_UART_RX);
-    SEGGER_RTT_printf(0,"GPS turned on before starting advertisement \n");
-    nrf_delay_ms(40000);
-    turn_Off_GPS();*/
-    
+   
      turn_Off_GPS();
      // Advertising then without PA/LNA
      //pa_lna_setup();
@@ -1212,10 +1181,8 @@ int main(void)
      //nrf_gpio_pin_set(APP_LNA_PIN);
      //adv_interval=64;
 
-     advertising_init();
-     advertising_start();
-     nrf_gpio_pin_set(LED);
-     //SEGGER_RTT_printf(0,"PA/LNA setup \n");
+    advertising_init();
+    advertising_start();
     uint32_t err_code = app_timer_create(&timer_id,
                                 APP_TIMER_MODE_REPEATED,
                                 timer_handler);
@@ -1227,7 +1194,6 @@ int main(void)
     for (;;)
     {
         idle_state_handle();
-        //SEGGER_RTT_printf(0,"%d \n",is_gps_fixed());
     }
 }
 
